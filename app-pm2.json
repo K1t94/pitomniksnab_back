@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "graphql",
+      "script": "npm",
+      "args" : "run serve-prod"
+    }
+  ]
+}

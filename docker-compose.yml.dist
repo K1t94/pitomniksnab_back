@@ -1,0 +1,27 @@
+version: '2'
+services:
+  nodejss:
+    build:
+      context: .
+      dockerfile: docker/nodejs/Dockerfile
+    expose:
+      - 80
+    env_file:
+      - ./global.env
+    links:
+      - postgres
+    network_mode: bridge
+  postgres:
+    image: postgres:9.6.18-alpine
+    expose:
+      - 5432
+    restart: always
+    volumes:
+      - pitomnik-pgdata:/var/lib/postgresql/data
+    env_file:
+      - ./local.env
+    ports:
+      - 5432:5432
+    network_mode: bridge
+volumes:
+    pitomnik-pgdata:

@@ -1,0 +1,16 @@
+{
+  "watch": [
+    "graphql",
+    "oauth",
+    "oauth-config",
+    "orm",
+    "server",
+    "rbac"
+  ],
+  "env": {
+    "TZ": "UTC"
+  },
+  "ext": "ts, js",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "node --inspect=0.0.0.0 --require ts-node/register --require tsconfig-paths/register server/index.ts"
+}
